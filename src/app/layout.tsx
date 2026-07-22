@@ -1,6 +1,9 @@
+import "./globals.css";
+import Providers from "./providers";
+
 export const metadata = {
-  title: "My App",
-  description: "App description",
+  title: "Code Duel",
+  description: "Let's battle it out !!",
 };
 
 export default function RootLayout({
@@ -10,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
