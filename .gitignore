@@ -39,3 +39,108 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma
+.agents
+.claude
+.windsurf
+
+# ==========================================
+# Dependencies
+# ==========================================
+/node_modules
+/.pnp
+.pnp.js
+
+# ==========================================
+# Next.js Build Output
+# ==========================================
+/.next/
+/out/
+/build
+/dist
+
+# ==========================================
+# Environment Variables & Secrets (CRITICAL)
+# ==========================================
+.env
+.env*.local
+.env.production
+.env.staging
+
+# Allow tracking an environment template file
+!.env.example
+
+# ==========================================
+# Prisma & Databases
+# ==========================================
+# SQLite local databases
+*.db
+*.db-journal
+
+# Ignore client build outputs if generated outside node_modules
+/prisma/generated
+
+# ==========================================
+# Debug & Log Files
+# ==========================================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# ==========================================
+# Operating System & Editor Files
+# ==========================================
+# macOS
+.DS_Store
+.apple-dns
+.LSOverride
+Icon?
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs / Editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# AI / Agent configurations (optional: remove if you want to track them)
+.claude/
+.agents/
+
+# ==========================================
+# Testing & Coverage
+# ==========================================
+/coverage
+/.nyc_output
+
+# ==========================================
+# Caches
+# ==========================================
+.eslintcache
+.turbo
+
+# Prisma & Environment
+.env
+prisma/migrations/*/.migrations
+skills-lock.json
+settings.json
+
+# Common ignores
+node_modules/
+.next/
+dist/
