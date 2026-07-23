@@ -1,24 +1,25 @@
-datasource db {
-  provider = "postgresql"
-}
-
 generator client {
   provider = "prisma-client-js"
 }
 
-model User {
-  id        String   @id @default(cuid())
-  username  String   @unique
-  email     String   @unique
-  password  String
-  cfHandle  String?  @unique
-  verified  Boolean  @default(false)
-  rating    Int      @default(0)
-  wins      Int      @default(0)
-  losses    Int      @default(0)
+datasource db {
+  provider = "postgresql"
+}
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model User {
+  id                  String    @id @default(cuid())
+  username            String    @unique
+  email               String    @unique
+  password            String
+  cfHandle            String?   @unique
+  rating              Int       @default(0)
+  wins                Int       @default(0)
+  losses              Int       @default(0)
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  cfTokenExpiresAt    DateTime?
+  cfVerificationToken String?
+  cfVerified          Boolean   @default(false)
 
   @@map("users")
 }

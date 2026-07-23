@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 
 export async function POST(req: Request) {
   try {
+    console.log("Received registration request");
     const { username, email, password } = await req.json();
     if (!username || !email || !password) {
       return NextResponse.json(
@@ -18,6 +19,13 @@ export async function POST(req: Request) {
         { status: 400 },
       );
     }
+
+    console.log(
+      "Checking for existing user with username:",
+      username,
+      "or email:",
+      email,
+    );
 
     const existing = await prisma.user.findFirst({
       where: { OR: [{ email }, { username }] },

@@ -9,8 +9,9 @@ export default auth((req: NextAuthRequest) => {
   const publicRoutes = ["/login", "/register"];
 
   const isAuthApi = nextUrl.pathname.startsWith("/api/auth");
+  const isPublicApi = nextUrl.pathname.startsWith("/api/register");
 
-  if (isAuthApi) {
+  if (isPublicApi || isAuthApi) {
     return NextResponse.next();
   }
 
@@ -25,7 +26,7 @@ export default auth((req: NextAuthRequest) => {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
-  console.log("NEXT-URL", nextUrl);
+  // console.log("NEXT-URL", nextUrl);
   return NextResponse.next();
 });
 
