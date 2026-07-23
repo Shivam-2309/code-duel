@@ -1,5 +1,3 @@
-// src/lib/codeforces.ts
-
 const CF_API_BASE = "https://codeforces.com/api";
 
 export interface CFUserInfo {

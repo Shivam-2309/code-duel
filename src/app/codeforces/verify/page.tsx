@@ -131,7 +131,7 @@ export default function VerifyHandlePage() {
                 onClick={() => router.push("/battleground")}
                 className="w-full rounded-md bg-yellow-400 text-black text-sm font-semibold py-2 hover:bg-yellow-300 transition"
               >
-                Continue to dashboard
+                Continue to Battleground
               </button>
             </div>
           ) : status === "idle" ? (

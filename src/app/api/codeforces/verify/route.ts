@@ -33,7 +33,6 @@ export async function POST(req: Request) {
       { error: "Could not fetch CF profile" },
       { status: 404 },
     );
-  console.log("CF User Info:", cfUser);
   const matched = cfUser.firstName?.trim() === dbUser.cfVerificationToken;
 
   if (!matched) {
