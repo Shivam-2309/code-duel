@@ -19,7 +19,7 @@ export default auth((req: NextAuthRequest) => {
     isLoggedIn &&
     (nextUrl.pathname === "/login" || nextUrl.pathname === "/register")
   ) {
-    return NextResponse.redirect(new URL("/dashboard", req.url));
+    return NextResponse.redirect(new URL("/codeforces/verify", req.url));
   }
 
   if (!isLoggedIn && !publicRoutes.includes(nextUrl.pathname)) {
