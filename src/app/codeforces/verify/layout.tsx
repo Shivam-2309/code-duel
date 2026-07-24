@@ -27,10 +27,6 @@ export default async function DashboardLayout({
     redirect("/battleground");
   }
 
-  if (!user?.cfVerified) {
-    redirect("/codeforces/verify");
-  }
-
   return (
     <div className="dashboard-layout">
       <main>{children}</main>
